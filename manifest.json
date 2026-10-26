@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T08:28:29.656933+00:00",
+  "generatedAt": "2026-10-26T08:47:41.283819+00:00",
   "files": {
     "404.html": {
       "bytes": 426,
@@ -18,8 +18,8 @@
       "sha256": "05a06aec1e56d5fc58dd6b5e216501f583fc910be57063a91c4036f572291e59"
     },
     "index.html": {
-      "bytes": 6402,
-      "sha256": "3e2ace5d5eb80fa4e78f840062031e2eea375a4ddcbd2ab31af14d9e9b068132"
+      "bytes": 6449,
+      "sha256": "c2a8d02205c846944979d4c79aa5edef9499fd5c266cfd1dd0615ccf5b3ca1ee"
     },
     "media/barber-loop.mp4": {
       "bytes": 2621451,
@@ -58,12 +58,16 @@
       "sha256": "f11d49ef08839db0663c3fbe5dbdfebcd27918778b244be1dcc5cc6f047324ad"
     },
     "player.js": {
-      "bytes": 19035,
-      "sha256": "3a62a150779b14e286db7980dc5d7eab9af177668ed377bb08f0aebd9ad8b335"
+      "bytes": 19094,
+      "sha256": "57b36a22d826e61f1e5da3d5b5a5e7dca98e04bf6367b7531b83bfde96f8918e"
     },
     "README.md": {
-      "bytes": 722,
-      "sha256": "ebd6de7b248ea67651bc12de8fed25c5ce2e2a829a093b3c1e1f49a7bc3f952e"
+      "bytes": 808,
+      "sha256": "52e23449d1c61301f81afe0665b08f3c2968b10729de474166f2092e459e5bd8"
+    },
+    "script/朕的牙疼漫游.docx": {
+      "bytes": 17174,
+      "sha256": "049f043bc2ef0903abc073d76030f808b4dbcecb44fa0bae184667199f85f308"
     }
   }
 }

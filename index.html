@@ -6,12 +6,12 @@
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#080b0a">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>陛下，请张嘴 · 沉浸式舞台</title>
+  <title>朕的牙疼漫游 · 沉浸式舞台</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="player.css?v=9">
 </head>
 <body>
-  <main id="stage" data-cue="palace" aria-label="《陛下，请张嘴》动态舞台">
+  <main id="stage" data-cue="palace" aria-label="《朕的牙疼漫游》动态舞台">
     <video id="palace" class="scene-media visible" muted playsinline loop preload="auto" poster="media/palace-poster.webp">
       <source src="media/palace-loop.mp4" type="video/mp4">
     </video>
@@ -31,17 +31,17 @@
     <div id="blackout" aria-hidden="true"></div>
 
     <header id="era" aria-live="polite">
-      <span id="era-year">古代</span>
-      <span id="era-place">宫廷 · 太医奉召</span>
+      <span id="era-year">古代中国</span>
+      <span id="era-place">古代中国 · 宫廷</span>
     </header>
 
     <aside id="knowledge" aria-live="polite">
-      <span id="knowledge-kicker">古代中国 · 齿蠹</span>
+      <span id="knowledge-kicker">古代中国牙科 · 齿蠹</span>
       <p id="knowledge-text">中药熏漱、外敷与针灸可暂时止痛；牙体腐坏深时，古代缺乏修补手段，根治通常只能拔牙。</p>
     </aside>
 
     <div id="chronology" aria-label="剧情时代">
-      <span class="era-node active" data-era-node="0">宫廷</span>
+      <span class="era-node active" data-era-node="0">古代中国</span>
       <span class="era-node" data-era-node="1">1400</span>
       <span class="era-node" data-era-node="2">1844</span>
       <span class="era-node" data-era-node="3">现代</span>
@@ -91,9 +91,9 @@
       <span id="state">第一场 · 宫廷</span>
       <label class="scene-picker" aria-label="选择剧情画面">
         <select id="sceneSelect">
-          <option value="0">01 宫廷</option>
-          <option value="1">02 1400 理发铺</option>
-          <option value="2">03 1844 哈特福德</option>
+          <option value="0">01 古代中国 · 宫廷</option>
+          <option value="1">02 1400 · 理发外科铺</option>
+          <option value="2">03 1844 · 笑气实验</option>
           <option value="3">04 现代口腔科</option>
         </select>
       </label>
@@ -119,6 +119,6 @@
       <button id="enterLandscape">进入全屏</button>
     </section>
   </main>
-  <script src="player.js?v=9"></script>
+  <script src="player.js?v=10"></script>
 </body>
 </html>

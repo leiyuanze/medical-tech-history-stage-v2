@@ -1,11 +1,15 @@
-# 陛下，请张嘴 · 沉浸式舞台
+# 朕的牙疼漫游 · 沉浸式舞台
 
-《陛下，请张嘴》医学技术史展示的静态舞台播放器。
+《朕的牙疼漫游》医学技术史展示的四场静态舞台播放器。
 
 ## 在线版本
 
 - [v2 四场新版](https://medical-tech-history-stage-v2.pages.dev/)
 - [v1 旧版备份](https://medical-tech-history-stage.pages.dev/)
+
+## 剧本
+
+- [最新演出本（Word）](./script/朕的牙疼漫游.docx)
 
 手机竖屏会显示横屏引导；横屏、桌面和投影均使用全幅 `object-fit: cover`，不设置 16:9 画框。
 
