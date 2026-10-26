@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <title>陛下，请张嘴 · 沉浸式舞台</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="player.css?v=8">
+  <link rel="stylesheet" href="player.css?v=9">
 </head>
 <body>
   <main id="stage" data-cue="palace" aria-label="《陛下，请张嘴》动态舞台">
@@ -34,6 +34,11 @@
       <span id="era-year">古代</span>
       <span id="era-place">宫廷 · 太医奉召</span>
     </header>
+
+    <aside id="knowledge" aria-live="polite">
+      <span id="knowledge-kicker">古代中国 · 齿蠹</span>
+      <p id="knowledge-text">中药熏漱、外敷与针灸可暂时止痛；牙体腐坏深时，古代缺乏修补手段，根治通常只能拔牙。</p>
+    </aside>
 
     <div id="chronology" aria-label="剧情时代">
       <span class="era-node active" data-era-node="0">宫廷</span>
@@ -80,7 +85,7 @@
       <div class="portal-ray"></div>
     </div>
 
-    <div id="hint" aria-live="polite">空格 下一景 · 1–4 直达 · B 黑场 · F 全屏</div>
+    <div id="hint" aria-live="polite">空格 下一景 · 1–4 直达 · K 知识 · B 黑场 · F 全屏</div>
 
     <nav id="hud" aria-label="舞台控制">
       <span id="state">第一场 · 宫廷</span>
@@ -95,6 +100,7 @@
       <button id="next">下一景 <kbd>空格</kbd></button>
       <button id="momentButton">片刻后 <kbd>M</kbd></button>
       <button id="pause">暂停 <kbd>P</kbd></button>
+      <button id="knowledgeToggle" aria-pressed="true">知识 <kbd>K</kbd></button>
       <button id="black">黑屏 <kbd>B</kbd></button>
       <button id="fullscreen">全屏 <kbd>F</kbd></button>
       <button id="openOutput" title="让大屏与笔记本分别显示">大屏窗口</button>
@@ -113,6 +119,6 @@
       <button id="enterLandscape">进入全屏</button>
     </section>
   </main>
-  <script src="player.js?v=8"></script>
+  <script src="player.js?v=9"></script>
 </body>
 </html>

@@ -17,6 +17,9 @@
       year: "古代",
       place: "宫廷 · 太医奉召",
       warp: "先到现代",
+      knowledgeKicker: "古代中国 · 齿蠹",
+      knowledgeText:
+        "中药熏漱、外敷与针灸可暂时止痛；牙体腐坏深时，古代缺乏修补手段，根治通常只能拔牙。",
     },
     {
       id: "clinic",
@@ -27,6 +30,9 @@
       year: "现代",
       place: "现代 · 口腔科",
       warp: "去往更远的未来",
+      knowledgeKicker: "现代口腔科 · 保存天然牙",
+      knowledgeText:
+        "局部麻醉与高温灭菌保障治疗，根管处理和树脂充填可清除感染并保留患牙。",
     },
     {
       id: "hartford",
@@ -37,6 +43,9 @@
       year: "1844年",
       place: "美国哈特福德 · 笑气实验",
       warp: "再去十九世纪",
+      knowledgeKicker: "1844年 · 笑气麻醉",
+      knowledgeText:
+        "笑气减轻拔牙疼痛，是近代牙科麻醉的重要节点；但剂量控制、消毒与牙体修复仍不成熟。",
     },
     {
       id: "barber",
@@ -47,6 +56,9 @@
       year: "约1400年",
       place: "法国巴黎 · 理发外科铺",
       warp: "向未来游历",
+      knowledgeKicker: "1400年 · 理发外科",
+      knowledgeText:
+        "当时没有专职牙医，理发匠兼做放血和拔牙；无麻醉、无补牙，感染风险高。",
     },
   ];
 
@@ -70,6 +82,7 @@
   let busy = false;
   let paused = false;
   let black = false;
+  let knowledgeVisible = true;
   let started = false;
   let frameToken = 0;
   let momentTimer = 0;
@@ -126,6 +139,8 @@
     $("state").textContent = `${item.index} · ${item.short}`;
     $("era-year").textContent = item.year;
     $("era-place").textContent = item.place;
+    $("knowledge-kicker").textContent = item.knowledgeKicker;
+    $("knowledge-text").textContent = item.knowledgeText;
     $("sceneSelect").value = String(currentIndex);
     $("momentButton").disabled = item.id !== "clinic";
     $("next").innerHTML =
@@ -148,6 +163,13 @@
     document.querySelectorAll("button:not(#hide):not(#enterLandscape)").forEach((button) => {
       button.disabled = busy || button.id === "momentButton" && cue().id !== "clinic";
     });
+  }
+
+  function setKnowledgeVisible(value, broadcast = true) {
+    knowledgeVisible = Boolean(value);
+    document.body.classList.toggle("knowledge-hidden", !knowledgeVisible);
+    $("knowledgeToggle").setAttribute("aria-pressed", String(knowledgeVisible));
+    if (broadcast) emit("knowledge", { value: knowledgeVisible });
   }
 
   function showMoment() {
@@ -277,6 +299,7 @@
     if (message.action === "pause") setPaused(Boolean(message.data.value), false);
     if (message.action === "black") setBlack(Boolean(message.data.value), false);
     if (message.action === "moment") showMoment();
+    if (message.action === "knowledge") setKnowledgeVisible(Boolean(message.data.value), false);
   }
 
   if (channel) channel.onmessage = (event) => receive(event.data);
@@ -290,6 +313,7 @@
     emit("cue", { index: currentIndex });
     emit("pause", { value: paused });
     emit("black", { value: black });
+    emit("knowledge", { value: knowledgeVisible });
   }
 
   async function switchTo(targetIndex, options = {}) {
@@ -514,6 +538,9 @@
     emit("moment");
   });
   $("pause").addEventListener("click", () => setPaused(!paused));
+  $("knowledgeToggle").addEventListener("click", () =>
+    setKnowledgeVisible(!knowledgeVisible),
+  );
   $("black").addEventListener("click", () => setBlack(!black));
   $("fullscreen").addEventListener("click", enterFullscreen);
   $("openOutput").addEventListener("click", openOutputWindow);
@@ -549,6 +576,8 @@
     } else if (key === "m") {
       showMoment();
       emit("moment");
+    } else if (key === "k") {
+      setKnowledgeVisible(!knowledgeVisible);
     } else if (key === "f") {
       enterFullscreen();
     } else if (key === "h") {
@@ -589,6 +618,7 @@
     instantTo,
     setPaused,
     setBlack,
+    setKnowledgeVisible,
     showMoment,
     finale,
     hideUI,
@@ -598,6 +628,7 @@
 
   renderCueUi();
   renderControls();
+  setKnowledgeVisible(true, false);
   updateViewportMode();
   showUI();
   setTimeout(() => {

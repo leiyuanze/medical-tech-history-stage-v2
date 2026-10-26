@@ -226,6 +226,50 @@ kbd {
   color: #315d5e;
 }
 
+#knowledge {
+  position: absolute;
+  z-index: 5;
+  bottom: 15%;
+  left: max(3.5vw, env(safe-area-inset-left));
+  width: min(410px, 34vw);
+  padding-left: 14px;
+  border-left: 1px solid rgb(var(--accent-rgb) / 0.62);
+  color: #ddd3c1;
+  text-shadow: 0 2px 14px #000d;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+}
+
+#knowledge-kicker {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--accent);
+  font-size: clamp(10px, 0.78vw, 14px);
+  letter-spacing: 0.16em;
+}
+
+#knowledge p {
+  margin: 0;
+  font-size: clamp(11px, 0.86vw, 16px);
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+}
+
+#stage[data-cue="clinic"] #knowledge {
+  color: #214849;
+  text-shadow: 0 1px 10px #ffffffcc;
+}
+
+#stage[data-cue="clinic"] #knowledge-kicker {
+  color: #2f6666;
+}
+
+body.knowledge-hidden #knowledge {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
 #chronology {
   position: absolute;
   z-index: 5;
@@ -359,6 +403,7 @@ body.output #portraitGate {
 
 body.blacked #era,
 body.blacked #chronology,
+body.blacked #knowledge,
 body.blacked #dentalFeed,
 body.blacked #moment,
 body.blacked #warp,
@@ -745,6 +790,11 @@ body.needs-landscape #portraitGate {
   #chronology {
     top: 86px;
   }
+
+  #knowledge {
+    bottom: 14%;
+    width: min(390px, 44vw);
+  }
 }
 
 @media (max-width: 820px) and (orientation: landscape) {
@@ -763,6 +813,12 @@ body.needs-landscape #portraitGate {
     right: 3%;
     bottom: 17%;
     width: 132px;
+  }
+
+  #knowledge {
+    bottom: 29%;
+    left: 3%;
+    width: 47vw;
   }
 
   .tooth-graphic {
@@ -803,12 +859,26 @@ body.needs-landscape #portraitGate {
   #dentalFeed {
     bottom: 23%;
   }
+
+  #knowledge {
+    bottom: 34%;
+    width: 52vw;
+  }
+
+  #knowledge p {
+    font-size: 10px;
+    line-height: 1.45;
+  }
 }
 
 @media (max-height: 500px) and (orientation: landscape) {
   #dentalFeed {
     bottom: 22%;
     width: 118px;
+  }
+
+  #knowledge {
+    bottom: 31%;
   }
 
   .tooth-graphic {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T08:05:50.774701+00:00",
+  "generatedAt": "2026-10-26T08:28:29.656933+00:00",
   "files": {
     "404.html": {
       "bytes": 426,
@@ -18,8 +18,8 @@
       "sha256": "05a06aec1e56d5fc58dd6b5e216501f583fc910be57063a91c4036f572291e59"
     },
     "index.html": {
-      "bytes": 6019,
-      "sha256": "9f335c4df34c98872d16b15e5de5db3e85f83a9f9937e038d81fdfc501949ffd"
+      "bytes": 6402,
+      "sha256": "3e2ace5d5eb80fa4e78f840062031e2eea375a4ddcbd2ab31af14d9e9b068132"
     },
     "media/barber-loop.mp4": {
       "bytes": 2621451,
@@ -54,16 +54,16 @@
       "sha256": "c7b31bc3b6460e7b83bc657576075ce393b23f63e0e602842352a4a45d64e12f"
     },
     "player.css": {
-      "bytes": 14860,
-      "sha256": "517ad2c526cc73b68ca312c9fb0df7a79357ec3056c2df65618979b876b879b3"
+      "bytes": 16082,
+      "sha256": "f11d49ef08839db0663c3fbe5dbdfebcd27918778b244be1dcc5cc6f047324ad"
     },
     "player.js": {
-      "bytes": 17380,
-      "sha256": "ee5f2874ed039b7a918dddeea8d3fd59f1084e9806dab33ad0d3104a8e75bac9"
+      "bytes": 19035,
+      "sha256": "3a62a150779b14e286db7980dc5d7eab9af177668ed377bb08f0aebd9ad8b335"
     },
     "README.md": {
-      "bytes": 518,
-      "sha256": "0fbf3c0a6c7a609ce8abd5e06c69caaa3b2293402612367a5f735d6f898fa735"
+      "bytes": 722,
+      "sha256": "ebd6de7b248ea67651bc12de8fed25c5ce2e2a829a093b3c1e1f49a7bc3f952e"
     }
   }
 }
