@@ -1,0 +1,69 @@
+{
+  "generatedAt": "2026-10-26T08:05:50.774701+00:00",
+  "files": {
+    "404.html": {
+      "bytes": 426,
+      "sha256": "581dc92ac00d4b481e704a2651a2f330f96b50e9918bddd59ca05b4779b22e9e"
+    },
+    "_headers": {
+      "bytes": 471,
+      "sha256": "f95f07181e494134e59d89c8b94cf597fbeef1c6524a3a3dab01b7a07f5b6309"
+    },
+    "assets/fonts/OFL.txt": {
+      "bytes": 4301,
+      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+    },
+    "assets/fonts/stage-title.ttf": {
+      "bytes": 20964,
+      "sha256": "05a06aec1e56d5fc58dd6b5e216501f583fc910be57063a91c4036f572291e59"
+    },
+    "index.html": {
+      "bytes": 6019,
+      "sha256": "9f335c4df34c98872d16b15e5de5db3e85f83a9f9937e038d81fdfc501949ffd"
+    },
+    "media/barber-loop.mp4": {
+      "bytes": 2621451,
+      "sha256": "e3b93f867cee9d5f8362bd63e84863944ebf1e5fb13ad3849e870fe9d08317b2"
+    },
+    "media/barber-poster.webp": {
+      "bytes": 58716,
+      "sha256": "eae74ff36121ed6c1c168d9b20ff7647aa13591e2071daad1a03a337bff0e989"
+    },
+    "media/clinic-loop.mp4": {
+      "bytes": 1655561,
+      "sha256": "f01353b3ec1843e27309d38ab7269a1510fe17d376b2319066c259634eaf3868"
+    },
+    "media/clinic-poster.webp": {
+      "bytes": 62442,
+      "sha256": "09433d8c740fb1d849441cc9aa41a7724cda5489a0870a9cbd0180f42476448f"
+    },
+    "media/hartford-loop.mp4": {
+      "bytes": 3097490,
+      "sha256": "a9449cd141d0c740d6761299e9c71623d843ae9cc0b4728caa59a71428e564d5"
+    },
+    "media/hartford-poster.webp": {
+      "bytes": 73180,
+      "sha256": "7d371b1d951c28adb1a3c51895994009b3b060398f1851c96de39a015a6ffd7a"
+    },
+    "media/palace-loop.mp4": {
+      "bytes": 6798540,
+      "sha256": "987bccfaec74076484043943dd2da496063fbf30ac4b005781f019f99f04fd48"
+    },
+    "media/palace-poster.webp": {
+      "bytes": 144486,
+      "sha256": "c7b31bc3b6460e7b83bc657576075ce393b23f63e0e602842352a4a45d64e12f"
+    },
+    "player.css": {
+      "bytes": 14860,
+      "sha256": "517ad2c526cc73b68ca312c9fb0df7a79357ec3056c2df65618979b876b879b3"
+    },
+    "player.js": {
+      "bytes": 17380,
+      "sha256": "ee5f2874ed039b7a918dddeea8d3fd59f1084e9806dab33ad0d3104a8e75bac9"
+    },
+    "README.md": {
+      "bytes": 518,
+      "sha256": "0fbf3c0a6c7a609ce8abd5e06c69caaa3b2293402612367a5f735d6f898fa735"
+    }
+  }
+}

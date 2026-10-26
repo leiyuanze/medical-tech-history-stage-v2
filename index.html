@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#080b0a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>陛下，请张嘴 · 沉浸式舞台</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="player.css?v=8">
+</head>
+<body>
+  <main id="stage" data-cue="palace" aria-label="《陛下，请张嘴》动态舞台">
+    <video id="palace" class="scene-media visible" muted playsinline loop preload="auto" poster="media/palace-poster.webp">
+      <source src="media/palace-loop.mp4" type="video/mp4">
+    </video>
+    <video id="clinic" class="scene-media" muted playsinline loop preload="metadata" poster="media/clinic-poster.webp">
+      <source src="media/clinic-loop.mp4" type="video/mp4">
+    </video>
+    <video id="hartford" class="scene-media" muted playsinline loop preload="metadata" poster="media/hartford-poster.webp">
+      <source src="media/hartford-loop.mp4" type="video/mp4">
+    </video>
+    <video id="barber" class="scene-media" muted playsinline loop preload="metadata" poster="media/barber-poster.webp">
+      <source src="media/barber-loop.mp4" type="video/mp4">
+    </video>
+
+    <div id="grade" aria-hidden="true"></div>
+    <div id="vignette" aria-hidden="true"></div>
+    <canvas id="transition" aria-hidden="true"></canvas>
+    <div id="blackout" aria-hidden="true"></div>
+
+    <header id="era" aria-live="polite">
+      <span id="era-year">古代</span>
+      <span id="era-place">宫廷 · 太医奉召</span>
+    </header>
+
+    <div id="chronology" aria-label="剧情时代">
+      <span class="era-node active" data-era-node="0">宫廷</span>
+      <span class="era-node" data-era-node="1">1400</span>
+      <span class="era-node" data-era-node="2">1844</span>
+      <span class="era-node" data-era-node="3">现代</span>
+    </div>
+
+    <section id="dentalFeed" aria-label="口内摄像示意">
+      <div class="feed-head"><span class="feed-live"></span><span>口内摄像</span><span>检查中</span></div>
+      <svg class="tooth-graphic" viewBox="0 0 160 140" role="img" aria-label="磨牙口内影像示意">
+        <defs>
+          <linearGradient id="toothIvory" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f6f0df"/>
+            <stop offset=".55" stop-color="#dfd4ba"/>
+            <stop offset="1" stop-color="#b5a98d"/>
+          </linearGradient>
+          <radialGradient id="oralHaze" cx=".5" cy=".42" r=".62">
+            <stop offset="0" stop-color="#263c3a"/>
+            <stop offset=".58" stop-color="#101c1c"/>
+            <stop offset="1" stop-color="#060b0b"/>
+          </radialGradient>
+        </defs>
+        <rect width="160" height="140" fill="url(#oralHaze)"/>
+        <path class="tooth-shadow" d="M80 18C68 14 58 19 54 30C49 43 54 56 62 66C68 74 67 86 66 98C65 113 69 125 76 126C82 127 83 113 85 102C87 94 91 94 94 102C97 112 98 126 104 126C112 126 114 112 112 97C110 84 114 73 120 64C127 53 127 38 119 28C111 18 98 17 88 25C85 27 83 27 80 18Z"/>
+        <path class="tooth-fill" d="M80 18C68 14 58 19 54 30C49 43 54 56 62 66C68 74 67 86 66 98C65 113 69 125 76 126C82 127 83 113 85 102C87 94 91 94 94 102C97 112 98 126 104 126C112 126 114 112 112 97C110 84 114 73 120 64C127 53 127 38 119 28C111 18 98 17 88 25C85 27 83 27 80 18Z"/>
+        <path class="tooth-neck" d="M54 69C70 77 92 77 111 67"/>
+        <path class="tooth-groove" d="M69 30C69 43 72 55 78 66M89 30C89 43 85 56 81 66"/>
+        <path class="tooth-root" d="M70 78C68 92 69 108 73 119M101 77C105 91 103 107 99 118"/>
+        <line class="scan-line" x1="8" y1="12" x2="152" y2="12"/>
+      </svg>
+      <div class="feed-meta"><span>影像</span><span>患牙 · 待检查</span></div>
+    </section>
+
+    <div id="moment" aria-live="polite">片刻后</div>
+    <div id="warp" aria-hidden="true">
+      <div class="warp-ring ring-one"></div>
+      <div class="warp-ring ring-two"></div>
+      <div class="warp-ring ring-three"></div>
+      <span id="warpLabel">先到现代</span>
+    </div>
+    <div id="portal" aria-hidden="true">
+      <div class="portal-core"></div>
+      <div class="portal-ray"></div>
+    </div>
+
+    <div id="hint" aria-live="polite">空格 下一景 · 1–4 直达 · B 黑场 · F 全屏</div>
+
+    <nav id="hud" aria-label="舞台控制">
+      <span id="state">第一场 · 宫廷</span>
+      <label class="scene-picker" aria-label="选择剧情画面">
+        <select id="sceneSelect">
+          <option value="0">01 宫廷</option>
+          <option value="1">02 1400 理发铺</option>
+          <option value="2">03 1844 哈特福德</option>
+          <option value="3">04 现代口腔科</option>
+        </select>
+      </label>
+      <button id="next">下一景 <kbd>空格</kbd></button>
+      <button id="momentButton">片刻后 <kbd>M</kbd></button>
+      <button id="pause">暂停 <kbd>P</kbd></button>
+      <button id="black">黑屏 <kbd>B</kbd></button>
+      <button id="fullscreen">全屏 <kbd>F</kbd></button>
+      <button id="openOutput" title="让大屏与笔记本分别显示">大屏窗口</button>
+      <button id="hide">收起 <kbd>H</kbd></button>
+    </nav>
+
+    <button id="start" hidden>点击播放</button>
+    <div id="error" role="alert" hidden></div>
+
+    <section id="portraitGate" aria-label="横屏提示">
+      <div class="landscape-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><path d="M21 9h27c4 0 7 3 7 7v27c0 4-3 7-7 7H21c-4 0-7-3-7-7V16c0-4 3-7 7-7Z"/><path d="M9 22V9h13M28 42 17 53m0 0v-8m0 8h8"/></svg>
+      </div>
+      <h2>请横屏观看</h2>
+      <p>舞台会自动铺满屏幕</p>
+      <button id="enterLandscape">进入全屏</button>
+    </section>
+  </main>
+  <script src="player.js?v=8"></script>
+</body>
+</html>
