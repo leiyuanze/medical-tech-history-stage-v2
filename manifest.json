@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T08:47:41.283819+00:00",
+  "generatedAt": "2026-10-26T16:08:05.728813+00:00",
   "files": {
     "404.html": {
       "bytes": 426,
@@ -18,8 +18,8 @@
       "sha256": "05a06aec1e56d5fc58dd6b5e216501f583fc910be57063a91c4036f572291e59"
     },
     "index.html": {
-      "bytes": 6449,
-      "sha256": "c2a8d02205c846944979d4c79aa5edef9499fd5c266cfd1dd0615ccf5b3ca1ee"
+      "bytes": 6537,
+      "sha256": "3e4bcd8c2ef8fe55cf1f37af56740a2bc776c25c2f1848f5d11e611b98152591"
     },
     "media/barber-loop.mp4": {
       "bytes": 2621451,
@@ -30,12 +30,12 @@
       "sha256": "eae74ff36121ed6c1c168d9b20ff7647aa13591e2071daad1a03a337bff0e989"
     },
     "media/clinic-loop.mp4": {
-      "bytes": 1655561,
-      "sha256": "f01353b3ec1843e27309d38ab7269a1510fe17d376b2319066c259634eaf3868"
+      "bytes": 1719763,
+      "sha256": "016b6d462530b5aebc5139e2f9ac5c10dac569a8bbe9bc5004834858604cd2a7"
     },
     "media/clinic-poster.webp": {
-      "bytes": 62442,
-      "sha256": "09433d8c740fb1d849441cc9aa41a7724cda5489a0870a9cbd0180f42476448f"
+      "bytes": 64628,
+      "sha256": "b860e4d294c03faf31ad2e9ebfb75c3ce3cfc81f1e47cbecc271966488c500ff"
     },
     "media/hartford-loop.mp4": {
       "bytes": 3097490,
@@ -46,12 +46,12 @@
       "sha256": "7d371b1d951c28adb1a3c51895994009b3b060398f1851c96de39a015a6ffd7a"
     },
     "media/palace-loop.mp4": {
-      "bytes": 6798540,
-      "sha256": "987bccfaec74076484043943dd2da496063fbf30ac4b005781f019f99f04fd48"
+      "bytes": 6823670,
+      "sha256": "6f43f83a68bd9ac3b9706128f499362b7abdaa1ed6fee65b5c975002025be1ed"
     },
     "media/palace-poster.webp": {
-      "bytes": 144486,
-      "sha256": "c7b31bc3b6460e7b83bc657576075ce393b23f63e0e602842352a4a45d64e12f"
+      "bytes": 154410,
+      "sha256": "38c5b9417450e3f0c04ad6b37993c2872578a9848671b8daed1d6ddcb524f41e"
     },
     "player.css": {
       "bytes": 16082,
